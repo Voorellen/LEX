@@ -1,5 +1,234 @@
 {
-  "links": [],
-  "nodes": [],
+  "links": [
+    {
+      "from": "34e0955f-c4e5-404c-9231-304a1619dd83",
+      "to": "8c1fa848-f2b5-45af-8add-dbb2c77864ef"
+    }
+  ],
+  "nodes": [
+    {
+      "category": [
+        "Nipype",
+        "io"
+      ],
+      "ports": [
+        {
+          "base": "sort_filelist",
+          "editable": true,
+          "id": "71f7c03a-d4b2-486e-902e-43d4a46faf37",
+          "input": true,
+          "inputPort": "3bdb45a7-c3d4-4438-935d-1f7727fe6387",
+          "name": "sort_filelist",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "template",
+          "editable": true,
+          "id": "c20b3f6c-5d89-4355-9b55-023bdeec1853",
+          "input": true,
+          "inputPort": "df7242aa-da67-407e-8206-11a7407dd829",
+          "name": "template",
+          "output": false,
+          "outputPort": false,
+          "value": "dict(func='%d/func/%d_s1_r1.nii')",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "base_directory",
+          "editable": true,
+          "id": "c93ad50d-6b6e-482f-b969-02eaa87870c4",
+          "input": true,
+          "inputPort": "caee044b-86c7-4ed3-ad7d-c644b5770ba8",
+          "name": "base_directory",
+          "output": false,
+          "outputPort": false,
+          "value": "'/project/3018028.06/LEX_ELLEN/data/'",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "raise_on_empty",
+          "editable": true,
+          "id": "3b0d2d53-3fee-49d8-84e6-23d994349437",
+          "input": true,
+          "inputPort": "70ae3cdf-831f-451e-8161-a73a528ef191",
+          "name": "raise_on_empty",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "drop_blank_outputs",
+          "editable": true,
+          "id": "ac239ed1-4429-4599-ad57-66870f860fe2",
+          "input": true,
+          "inputPort": "0999662a-f081-41c3-96c3-61eb1df4fccc",
+          "name": "drop_blank_outputs",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "template_args",
+          "editable": true,
+          "id": "a61ae9e0-8f40-461c-9ccd-af0e801a60b8",
+          "input": true,
+          "inputPort": "d3974edc-95e7-478a-8073-871e4fb898e9",
+          "name": "template_args",
+          "output": false,
+          "outputPort": false,
+          "value": " dict(func=[['subj_id', 'subj_id']])",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "func",
+          "editable": true,
+          "id": "07062ba6-1d6a-43ca-a826-3126ea8bfc7c",
+          "input": false,
+          "inputPort": false,
+          "name": "func",
+          "output": true,
+          "outputPort": "c7ab828d-9d82-45d7-a9ae-6c873b20b985",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "struct",
+          "editable": true,
+          "id": "84266fca-8f88-491f-b817-75f38409586e",
+          "input": false,
+          "inputPort": false,
+          "name": "struct",
+          "output": true,
+          "outputPort": "c51d56a8-95b1-473d-ac67-408259b9fd93",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "subj_id",
+          "editable": true,
+          "id": "9ef175c1-fcba-4fe1-88b8-bb9d3b94e49d",
+          "input": true,
+          "inputPort": "8c1fa848-f2b5-45af-8add-dbb2c77864ef",
+          "name": "subj_id",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        -749.4093674088411,
+        -334.29400392748676
+      ],
+      "title": {
+        "code": [
+          {
+            "language": "Nipype",
+            "comment": "Generic datagrabber module that wraps around glob in an",
+            "argument": {
+              "name": "io.DataGrabber()",
+              "import": "import nipype.interfaces.io as io"
+            }
+          },
+          {
+            "language": "Docker",
+            "argument": {
+              "name": "Nipype, io"
+            }
+          }
+        ],
+        "name": "io_DataGrabber",
+        "class": "io.DataGrabber",
+        "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/nipype.interfaces.io.html#datagrabber"
+      }
+    },
+    {
+      "category": [
+        "Nipype",
+        "utility",
+        "base"
+      ],
+      "ports": [
+        {
+          "base": "subject",
+          "editable": true,
+          "id": "f2975131-d1e8-45a4-80ab-e35cb13173f8",
+          "input": true,
+          "inputPort": "35cb7fb2-1edd-41d8-b688-cea1842b4b08",
+          "name": "subject",
+          "output": true,
+          "outputPort": "34e0955f-c4e5-404c-9231-304a1619dd83",
+          "value": "[50, 99]",
+          "visible": true,
+          "iterator": true
+        },
+        {
+          "base": "session",
+          "editable": true,
+          "id": "a9a3f177-58aa-434e-a0e8-2cee3e26f7f6",
+          "input": true,
+          "inputPort": "2f7ea7ff-def9-43c6-9ffd-b2d2f8f16d9c",
+          "name": "session",
+          "output": true,
+          "outputPort": "c6f001a2-028a-4492-9098-ab357de52698",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "run_no",
+          "editable": true,
+          "id": "e9d811ca-370c-4d8f-a1c9-fe1b8661f4d3",
+          "input": true,
+          "inputPort": "40ea0c3e-e061-4d4a-a020-c31518c1ac8b",
+          "name": "run_no",
+          "output": true,
+          "outputPort": "7757d6d9-da1e-4e98-b357-a9c872aa0880",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        -1218.8881475195183,
+        -298.3908133146938
+      ],
+      "title": {
+        "code": [
+          {
+            "language": "Nipype",
+            "comment": "Basic interface class generates identity mappings",
+            "argument": {
+              "name": "utility.IdentityInterface()",
+              "import": "import nipype.interfaces.utility as utility"
+            }
+          },
+          {
+            "language": "Docker",
+            "argument": {
+              "name": "Nipype, utility"
+            }
+          }
+        ],
+        "name": "utility_IdentityInterface",
+        "class": "utility.IdentityInterface",
+        "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.utility/base.html#identityinterface"
+      }
+    }
+  ],
   "version": "v1"
 }
