@@ -9,11 +9,11 @@ import nipype.interfaces.io as io
 import nipype.interfaces.utility as utility
 
 #Generic datagrabber module that wraps around glob in an
-io_DataGrabber = pe.Node(interface = io.DataGrabber(), name='io_DataGrabber')
+io_DataGrabber = pe.Node(io.DataGrabber(infields=["subj_id", "field_template"], outfields=["func", "struct"]), name = 'io_DataGrabber')
 io_DataGrabber.inputs.template = '*'
 io_DataGrabber.inputs.base_directory = '/project/3018028.06/LEX_ELLEN/data/'
 io_DataGrabber.inputs.template_args =  dict(func=[['subj_id', 'subj_id']])
-io_DataGrabber.inputs.field_template = dict(func='%d/outfields/%d_s1_r1.nii')
+io_DataGrabber.inputs.field_template = dict(func='%d/func/%d_s1_r1.nii')
 
 #Basic interface class generates identity mappings
 utility_IdentityInterface = pe.Node(utility.IdentityInterface(fields=["subject", "session", "run_no"]), name='utility_IdentityInterface', iterfield = ['subject'])
