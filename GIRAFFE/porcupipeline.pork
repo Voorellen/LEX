@@ -138,7 +138,7 @@
           "name": "field_template",
           "output": false,
           "outputPort": false,
-          "value": "dict(func='%d/func/%d_s1_r1.nii')",
+          "value": "dict(outfields='%d/func/%d_s1_r1.nii')",
           "visible": true,
           "iterator": false
         },
@@ -152,7 +152,7 @@
           "output": false,
           "outputPort": false,
           "value": "outfields=[\"func\", \"struct\"])",
-          "visible": true,
+          "visible": false,
           "iterator": false
         }
       ],
