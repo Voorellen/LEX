@@ -21,7 +21,7 @@
           "name": "sort_filelist",
           "output": false,
           "outputPort": false,
-          "value": "",
+          "value": "True",
           "visible": true,
           "iterator": false
         },

@@ -10,6 +10,7 @@ import nipype.interfaces.utility as utility
 
 #Generic datagrabber module that wraps around glob in an
 io_DataGrabber = pe.Node(io.DataGrabber(infields=["subj_id", "field_template"], outfields=["func", "struct"]), name = 'io_DataGrabber')
+io_DataGrabber.inputs.sort_filelist = True
 io_DataGrabber.inputs.template = '*'
 io_DataGrabber.inputs.base_directory = '/project/3018028.06/LEX_ELLEN/data/'
 io_DataGrabber.inputs.template_args =  dict(func=[['subj_id', 'subj_id']])
