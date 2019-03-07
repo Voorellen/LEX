@@ -138,7 +138,7 @@
           "name": "field_template",
           "output": false,
           "outputPort": false,
-          "value": "dict(outfields='%d/func/%d_s1_r1.nii')",
+          "value": "dict(func='%d/outfields/%d_s1_r1.nii')",
           "visible": true,
           "iterator": false
         },
