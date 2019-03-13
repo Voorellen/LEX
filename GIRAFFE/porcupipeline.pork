@@ -15,6 +15,26 @@
     {
       "from": "8d633015-372f-4136-93bd-41ce25e49dbd",
       "to": "c9d9a248-47d5-47ad-b9d5-4dd5f77a1e2b"
+    },
+    {
+      "from": "c6f001a2-028a-4492-9098-ab357de52698",
+      "to": "9141cfb7-46fb-4c91-a04f-26cc6b4a9e65"
+    },
+    {
+      "from": "7757d6d9-da1e-4e98-b357-a9c872aa0880",
+      "to": "abaa1418-5e1b-4859-9b57-76ef8b4a0a74"
+    },
+    {
+      "from": "c7ab828d-9d82-45d7-a9ae-6c873b20b985",
+      "to": "79e90a02-8bc9-43d3-9a8d-a446ced5b0fe"
+    },
+    {
+      "from": "dbc59036-4b4a-4e2f-88ce-0cda2fc48510",
+      "to": "6414921e-5b53-4329-a426-815852687a2c"
+    },
+    {
+      "from": "babecd01-f223-40c5-b8d1-60d53ba6a8b7",
+      "to": "f206981c-405c-4732-a914-c5ecde1537fc"
     }
   ],
   "nodes": [
@@ -100,7 +120,7 @@
           "name": "template_args",
           "output": false,
           "outputPort": false,
-          "value": " dict(func=[['subj_id', 'subj_id']],struct=[['subj_id']])",
+          "value": " dict(func=[['subj_id', 'subj_id', 'session', 'run_no']],struct=[['subj_id']])",
           "visible": false,
           "iterator": false
         },
@@ -152,7 +172,33 @@
           "name": "field_template",
           "output": false,
           "outputPort": false,
-          "value": "dict(func='%02d/func/%02d_s1_r1.nii', struct='%02d/anat/ses-mri01_t1_mprage_*.nii')",
+          "value": "dict(func='%02d/func/%02d_s%d_r%d.nii', struct='%02d/anat/ses-mri01_t1_mprage_*.nii')",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "session",
+          "editable": true,
+          "id": "aa3287de-7769-4852-9a36-9bc22a5291f2",
+          "input": true,
+          "inputPort": "9141cfb7-46fb-4c91-a04f-26cc6b4a9e65",
+          "name": "session",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "run_no",
+          "editable": true,
+          "id": "30d2391b-0ef0-458e-af98-077e263194e3",
+          "input": true,
+          "inputPort": "abaa1418-5e1b-4859-9b57-76ef8b4a0a74",
+          "name": "run_no",
+          "output": false,
+          "outputPort": false,
+          "value": "",
           "visible": true,
           "iterator": false
         }
@@ -210,9 +256,9 @@
           "name": "session",
           "output": true,
           "outputPort": "c6f001a2-028a-4492-9098-ab357de52698",
-          "value": "",
+          "value": "[1, 2]",
           "visible": true,
-          "iterator": false
+          "iterator": true
         },
         {
           "base": "run_no",
@@ -223,9 +269,9 @@
           "name": "run_no",
           "output": true,
           "outputPort": "7757d6d9-da1e-4e98-b357-a9c872aa0880",
-          "value": "",
+          "value": "[1, 2, 3, 4]",
           "visible": true,
-          "iterator": false
+          "iterator": true
         }
       ],
       "position": [
@@ -689,8 +735,8 @@
         }
       ],
       "position": [
-        -490.5688706600476,
-        -212.4113842647079
+        -313.91748821375853,
+        -313.1496082942489
       ],
       "code": [
         {
@@ -911,11 +957,37 @@
           "value": "",
           "visible": true,
           "iterator": false
+        },
+        {
+          "base": "McFlirt",
+          "editable": true,
+          "id": "4282e143-f485-42da-830d-b45f53936b85",
+          "input": true,
+          "inputPort": "6414921e-5b53-4329-a426-815852687a2c",
+          "name": "McFlirt",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "McFlirt_mean",
+          "editable": true,
+          "id": "f41c8f08-9db5-40d4-a110-d207f9292432",
+          "input": true,
+          "inputPort": "f206981c-405c-4732-a914-c5ecde1537fc",
+          "name": "McFlirt_mean",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
         }
       ],
       "position": [
-        -75.19879660413541,
-        -208.16949734605953
+        -4.869099948861972,
+        -24.700724457875936
       ],
       "code": [
         {
@@ -934,6 +1006,427 @@
         }
       ],
       "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/nipype.interfaces.io.html#datasink"
+    },
+    {
+      "name": "fsl_MCFLIRT",
+      "class": "fsl.MCFLIRT",
+      "category": [
+        "fsl",
+        "preprocess"
+      ],
+      "ports": [
+        {
+          "base": "in_file",
+          "editable": true,
+          "id": "35af9bcb-5f69-4552-8e07-2f182fd86ca9",
+          "input": true,
+          "inputPort": "79e90a02-8bc9-43d3-9a8d-a446ced5b0fe",
+          "name": "in_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_file",
+          "editable": true,
+          "id": "9bc114f0-37da-4e47-b5d0-d6e366ae9e04",
+          "input": true,
+          "inputPort": "cc02efe7-e872-4c57-a801-90c389859799",
+          "name": "out_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "cost",
+          "editable": true,
+          "id": "7d7669f0-3b34-4567-9c19-e6cb8ebdc662",
+          "input": true,
+          "inputPort": "e0a7210e-4e21-4f1b-a76b-00dc9d5dffce",
+          "name": "cost",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "bins",
+          "editable": true,
+          "id": "f52b2b72-ce06-4252-81b9-39caf1ae9b59",
+          "input": true,
+          "inputPort": "2ee0f237-7dda-45e5-81c3-42ef96edffe8",
+          "name": "bins",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "dof",
+          "editable": true,
+          "id": "eca29755-2b06-4ddd-976b-01f7ab5d5aac",
+          "input": true,
+          "inputPort": "57dabd37-3a7b-4e2e-a966-6774ed8cc23a",
+          "name": "dof",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "ref_vol",
+          "editable": true,
+          "id": "9d943cdd-0606-4f20-a24b-5fb12bb88524",
+          "input": true,
+          "inputPort": "2294b58c-ef32-4fb1-8ef2-760f055cb886",
+          "name": "ref_vol",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "scaling",
+          "editable": true,
+          "id": "45d06470-386d-4ba9-973d-5ccd1f970081",
+          "input": true,
+          "inputPort": "fed6fbc0-6d57-49e0-b0ff-5d30c0408c54",
+          "name": "scaling",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "smooth",
+          "editable": true,
+          "id": "be398335-0ec5-44be-8865-d900136e7d4b",
+          "input": true,
+          "inputPort": "a1ff3908-1860-4660-ab7e-a3fe574ddaf5",
+          "name": "smooth",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "rotation",
+          "editable": true,
+          "id": "4310a257-9712-4dc5-a25b-71d9ceca33b0",
+          "input": true,
+          "inputPort": "efc92b32-35c4-429d-bf6f-6de63da745ac",
+          "name": "rotation",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "stages",
+          "editable": true,
+          "id": "25e2e955-d878-4140-9a21-de8072169103",
+          "input": true,
+          "inputPort": "296e123f-d3f2-4556-9dd9-2e715b08ef89",
+          "name": "stages",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "init",
+          "editable": true,
+          "id": "da74603e-c696-4147-ac4d-3a7ebe93d3e0",
+          "input": true,
+          "inputPort": "e0e10711-2984-476e-9512-047f888fd7cb",
+          "name": "init",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "interpolation",
+          "editable": true,
+          "id": "2bf71b9a-524b-45cd-9dce-97e15413bd23",
+          "input": true,
+          "inputPort": "b4441eb7-0664-47d9-b47a-5ba3b1bfcbc7",
+          "name": "interpolation",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "use_gradient",
+          "editable": true,
+          "id": "11def8a8-3695-4315-be4b-5c6f35c15349",
+          "input": true,
+          "inputPort": "38401cc0-f9b4-4964-a842-41251bdc6c81",
+          "name": "use_gradient",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "use_contour",
+          "editable": true,
+          "id": "97d605a6-7cf6-4f92-9be2-419a1858427d",
+          "input": true,
+          "inputPort": "fbf524e2-3766-485a-b923-32076c709978",
+          "name": "use_contour",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "mean_vol",
+          "editable": true,
+          "id": "990bf792-73bb-40ea-bfe1-8a045ae8a51d",
+          "input": true,
+          "inputPort": "9d580a37-ffe5-4513-afd3-7ed73be5deef",
+          "name": "mean_vol",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "stats_imgs",
+          "editable": true,
+          "id": "0408239d-d30b-42fc-968b-fc77c9e5beb5",
+          "input": true,
+          "inputPort": "64be7d34-90f7-4cb6-9ed9-b82281aad327",
+          "name": "stats_imgs",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "save_mats",
+          "editable": true,
+          "id": "49e910ff-3ceb-41c4-9f2e-364ad69948c6",
+          "input": true,
+          "inputPort": "8180ed0b-c2c9-44da-afa4-5db71c70cf8c",
+          "name": "save_mats",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "save_plots",
+          "editable": true,
+          "id": "fb95c955-d586-42a4-9152-9fde3e614c15",
+          "input": true,
+          "inputPort": "9a84dcf3-0945-45d1-b45d-d15344f968cf",
+          "name": "save_plots",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "save_rms",
+          "editable": true,
+          "id": "0e69ffc2-b6ce-4c5c-b2e5-b1b3e8916028",
+          "input": true,
+          "inputPort": "85ebbe00-8be2-4639-9fc9-21eead3a54ad",
+          "name": "save_rms",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "ref_file",
+          "editable": true,
+          "id": "9140b0f6-e12c-476b-a0f3-cef2e51e66a4",
+          "input": true,
+          "inputPort": "2665d6d3-5277-4ae2-af13-761d20bfc2fc",
+          "name": "ref_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "output_type",
+          "editable": true,
+          "id": "e9158999-7cda-4b9b-9105-1f8073a79a27",
+          "input": true,
+          "inputPort": "468f666e-9d18-4bf1-91a9-5562cb547e6c",
+          "name": "output_type",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "args",
+          "editable": true,
+          "id": "ab2de81a-4a3c-46a5-aa35-6893a367e3d8",
+          "input": true,
+          "inputPort": "29f69689-1de8-451e-bb00-13f4f09edd37",
+          "name": "args",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "environ",
+          "editable": true,
+          "id": "5a0a1aa6-bab7-4298-82fb-3c77c45c42a5",
+          "input": true,
+          "inputPort": "d39f46d9-8e51-4460-a4a7-fc98b99e3665",
+          "name": "environ",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "out_file",
+          "editable": false,
+          "id": "576a2948-d1d8-4455-a5ad-600950e02f19",
+          "input": false,
+          "inputPort": false,
+          "name": "out_file",
+          "output": true,
+          "outputPort": "dbc59036-4b4a-4e2f-88ce-0cda2fc48510",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "variance_img",
+          "editable": false,
+          "id": "29f7a2b4-4a1e-4b50-9627-35dd8f57b53b",
+          "input": false,
+          "inputPort": false,
+          "name": "variance_img",
+          "output": true,
+          "outputPort": "9fb974d3-4246-4ee4-a13d-b4d89ea956cc",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "std_img",
+          "editable": false,
+          "id": "d8e22b6f-8ac4-48cb-9536-b110cf56a1a0",
+          "input": false,
+          "inputPort": false,
+          "name": "std_img",
+          "output": true,
+          "outputPort": "6412f33e-6da9-474e-b3f6-67bb99339355",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "mean_img",
+          "editable": false,
+          "id": "23acf775-a527-4b50-a187-7920d1ced87f",
+          "input": false,
+          "inputPort": false,
+          "name": "mean_img",
+          "output": true,
+          "outputPort": "babecd01-f223-40c5-b8d1-60d53ba6a8b7",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "par_file",
+          "editable": false,
+          "id": "a733c18a-81bb-4045-ac08-90986ed6d026",
+          "input": false,
+          "inputPort": false,
+          "name": "par_file",
+          "output": true,
+          "outputPort": "36da69e0-b3ee-4f32-aecb-f9348e9196b3",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "mat_file",
+          "editable": false,
+          "id": "1b0c433a-d87f-4ea1-9633-0968c31c0158",
+          "input": false,
+          "inputPort": false,
+          "name": "mat_file",
+          "output": true,
+          "outputPort": "616f8e58-0d32-42c0-ac5c-d096c8c78edb",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "rms_files",
+          "editable": false,
+          "id": "95cc9613-9fb4-4964-a54f-676bc2f9b4a7",
+          "input": false,
+          "inputPort": false,
+          "name": "rms_files",
+          "output": true,
+          "outputPort": "ca102996-0855-4d1d-abe0-c2d1b177160b",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        -494.79570491280185,
+        88.99447110459516
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Wraps the executable command ``mcflirt``.",
+          "argument": {
+            "name": "fsl.MCFLIRT()",
+            "import": "import nipype.interfaces.fsl as fsl"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "name": "fsl"
+          }
+        }
+      ],
+      "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.fsl/preprocess.html#mcflirt"
     }
   ],
   "version": "v1"
