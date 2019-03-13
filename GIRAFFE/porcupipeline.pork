@@ -140,7 +140,7 @@
           "name": "field_template",
           "output": false,
           "outputPort": false,
-          "value": "dict(func='%d/func/%d_s1_r1.nii')",
+          "value": "dict(func='%02d/func/%02d_s1_r1.nii')",
           "visible": true,
           "iterator": false
         },
