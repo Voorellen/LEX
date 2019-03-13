@@ -14,7 +14,7 @@ io_DataGrabber = pe.Node(io.DataGrabber(infields=["subj_id", "field_template"], 
 io_DataGrabber.inputs.sort_filelist = True
 io_DataGrabber.inputs.template = '*'
 io_DataGrabber.inputs.base_directory = '/project/3018028.06/LEX_ELLEN/data/'
-io_DataGrabber.inputs.template_args =  dict(func=[['subj_id', 'subj_id']])
+io_DataGrabber.inputs.template_args =  dict(func=[['subj_id', 'subj_id']],struct=[['subj_id']])
 io_DataGrabber.inputs.field_template = dict(func='%02d/func/%02d_s1_r1.nii', struct='%02d/anat/ses-mri01_t1_mprage_*.nii')
 
 #Basic interface class generates identity mappings

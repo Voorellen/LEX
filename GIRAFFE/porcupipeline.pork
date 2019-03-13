@@ -92,7 +92,7 @@
           "name": "template_args",
           "output": false,
           "outputPort": false,
-          "value": " dict(func=[['subj_id', 'subj_id']])",
+          "value": " dict(func=[['subj_id', 'subj_id']],struct=[['subj_id']])",
           "visible": false,
           "iterator": false
         },
@@ -146,19 +146,6 @@
           "outputPort": false,
           "value": "dict(func='%02d/func/%02d_s1_r1.nii', struct='%02d/anat/ses-mri01_t1_mprage_*.nii')",
           "visible": true,
-          "iterator": false
-        },
-        {
-          "base": "output",
-          "editable": true,
-          "id": "5f6722a3-1b60-49bd-b667-ad770cf708cc",
-          "input": false,
-          "inputPort": false,
-          "name": "output",
-          "output": false,
-          "outputPort": false,
-          "value": "outfields=[\"func\", \"struct\"])",
-          "visible": false,
           "iterator": false
         }
       ],
