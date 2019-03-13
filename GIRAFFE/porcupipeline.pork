@@ -3,6 +3,10 @@
     {
       "from": "34e0955f-c4e5-404c-9231-304a1619dd83",
       "to": "8c1fa848-f2b5-45af-8add-dbb2c77864ef"
+    },
+    {
+      "from": "c51d56a8-95b1-473d-ac67-408259b9fd93",
+      "to": "63b3738a-bad9-43c3-8992-1fdc44296a90"
     }
   ],
   "nodes": [
@@ -140,7 +144,7 @@
           "name": "field_template",
           "output": false,
           "outputPort": false,
-          "value": "dict(func='%02d/func/%02d_s1_r1.nii')",
+          "value": "dict(func='%02d/func/%02d_s1_r1.nii', struct='%02d/anat/ses-mri01_t1_mprage_*.nii')",
           "visible": true,
           "iterator": false
         },
@@ -159,8 +163,8 @@
         }
       ],
       "position": [
-        -749.4093674088411,
-        -334.29400392748676
+        -740.7453049088411,
+        -323.46397157885394
       ],
       "code": [
         {
@@ -230,8 +234,8 @@
         }
       ],
       "position": [
-        -1218.8881475195183,
-        -298.3908133146938
+        -1150.6589605077995,
+        -312.46985384203754
       ],
       "code": [
         {
@@ -250,6 +254,466 @@
         }
       ],
       "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.utility/base.html#identityinterface"
+    },
+    {
+      "name": "fsl_BET",
+      "class": "fsl.BET",
+      "category": [
+        "fsl",
+        "preprocess"
+      ],
+      "ports": [
+        {
+          "base": "in_file",
+          "editable": true,
+          "id": "0e82541d-88f4-44e8-8ceb-4e50e25c2597",
+          "input": true,
+          "inputPort": "63b3738a-bad9-43c3-8992-1fdc44296a90",
+          "name": "in_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "out_file",
+          "editable": true,
+          "id": "d10a9905-04c0-4c5d-94d2-dac1954afe89",
+          "input": true,
+          "inputPort": "32025329-a90f-4862-ab4a-40c23bcf2a2e",
+          "name": "out_file",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "outline",
+          "editable": true,
+          "id": "861c63a8-e495-42a2-9b0b-5476d2a09870",
+          "input": true,
+          "inputPort": "0d06b424-6f65-4a9f-9ef7-582bf9172dc6",
+          "name": "outline",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "mask",
+          "editable": true,
+          "id": "e1ad4fef-0085-4a95-a47a-2dc29a5aba0a",
+          "input": true,
+          "inputPort": "83d274f4-e96a-4928-bbda-28891fdfc1b8",
+          "name": "mask",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "skull",
+          "editable": true,
+          "id": "dc660471-c688-491d-ba51-9a48be63660e",
+          "input": true,
+          "inputPort": "7012ad3c-1585-4d52-9240-8af1172ddf21",
+          "name": "skull",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "no_output",
+          "editable": true,
+          "id": "3f761e56-081f-439d-9059-9ae4e4272720",
+          "input": true,
+          "inputPort": "4996e864-3dde-4408-9318-b72d8d581361",
+          "name": "no_output",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "frac",
+          "editable": true,
+          "id": "d4ffb919-c619-4f19-a644-2b830f018869",
+          "input": true,
+          "inputPort": "87426e06-4a9e-49ec-bfdd-8e08cd9901a7",
+          "name": "frac",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "vertical_gradient",
+          "editable": true,
+          "id": "eff88508-70db-452c-8f52-c287dd9938c2",
+          "input": true,
+          "inputPort": "fc8a4df3-a0b5-46c5-acd7-6da4bb4aab75",
+          "name": "vertical_gradient",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "radius",
+          "editable": true,
+          "id": "87158e28-7e66-450a-9195-2f7367d08786",
+          "input": true,
+          "inputPort": "90b690aa-41b5-4cd8-b3cc-772f6c790768",
+          "name": "radius",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "center",
+          "editable": true,
+          "id": "35204232-504c-47e3-ad96-a54924ff69a1",
+          "input": true,
+          "inputPort": "6c8dca2c-b92c-4030-861a-f933c15cf323",
+          "name": "center",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "threshold",
+          "editable": true,
+          "id": "dec99ba3-173b-44c5-a104-6a8fedbb0fa5",
+          "input": true,
+          "inputPort": "495b678f-6331-42c1-aea7-23485c6c02fd",
+          "name": "threshold",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "mesh",
+          "editable": true,
+          "id": "d277bc5e-21b1-4e04-bc19-b166d1d9bb60",
+          "input": true,
+          "inputPort": "9d7b4d17-12de-4b9c-a52f-0f53bfb9fe26",
+          "name": "mesh",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "robust",
+          "editable": true,
+          "id": "97520fc2-e314-4925-b25b-0413331c3a25",
+          "input": true,
+          "inputPort": "4e653a09-991e-4bc1-b0d8-5bf1442d5da3",
+          "name": "robust",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "padding",
+          "editable": true,
+          "id": "1684228d-d860-4387-bb27-3ea773456316",
+          "input": true,
+          "inputPort": "371b1cbb-f8b4-4caa-8a8f-70e55589e8b7",
+          "name": "padding",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "remove_eyes",
+          "editable": true,
+          "id": "ab7e3c34-7e06-4236-aa8e-7f4fd383fa9b",
+          "input": true,
+          "inputPort": "221063d5-f8c0-42aa-a87f-93f3aa903297",
+          "name": "remove_eyes",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "surfaces",
+          "editable": true,
+          "id": "08518aed-72b9-4ead-b7eb-b5f52f4f7688",
+          "input": true,
+          "inputPort": "ff753e09-3cfd-4237-86fd-117f3ea4a4bf",
+          "name": "surfaces",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "t2_guided",
+          "editable": true,
+          "id": "7b5adb87-bb7e-4d68-9587-81606fe5054e",
+          "input": true,
+          "inputPort": "8a94cde1-0eb6-45c2-aae2-bfa5ca2dff2d",
+          "name": "t2_guided",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "functional",
+          "editable": true,
+          "id": "cb66d1a9-8e7b-46e8-9822-e4683716de3d",
+          "input": true,
+          "inputPort": "f5b41b64-4ffe-4c05-a794-0e306057ecdf",
+          "name": "functional",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "reduce_bias",
+          "editable": true,
+          "id": "c9a22ac6-d64f-47ee-8564-b17b856bf944",
+          "input": true,
+          "inputPort": "88b4e401-23fb-406b-973a-dcdaf47ffadb",
+          "name": "reduce_bias",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "output_type",
+          "editable": true,
+          "id": "239ca7ee-91ab-46ea-bd27-0bebafce0671",
+          "input": true,
+          "inputPort": "12cdd1da-c39b-4cd8-866b-e9cc7d1fa57e",
+          "name": "output_type",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "args",
+          "editable": true,
+          "id": "e293677b-a2c7-4a9b-aa9d-0b6681d9ee06",
+          "input": true,
+          "inputPort": "b55cd431-74d0-4277-aefa-7b3acccad1b7",
+          "name": "args",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "environ",
+          "editable": true,
+          "id": "37c40ff6-4a44-4af2-9311-5a602dd4cb32",
+          "input": true,
+          "inputPort": "40c73072-74c7-4723-8e30-84a09860d4e4",
+          "name": "environ",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "out_file",
+          "editable": false,
+          "id": "65ea328d-52ab-4509-9f9d-fea8c5c9fad3",
+          "input": false,
+          "inputPort": false,
+          "name": "out_file",
+          "output": true,
+          "outputPort": "c62fa26c-b27a-4027-9121-0cd7a4d7a93b",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "mask_file",
+          "editable": false,
+          "id": "358b4137-0d31-41a6-bbbf-401e6629056b",
+          "input": false,
+          "inputPort": false,
+          "name": "mask_file",
+          "output": true,
+          "outputPort": "8d633015-372f-4136-93bd-41ce25e49dbd",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "outline_file",
+          "editable": false,
+          "id": "d13c08ca-a03a-4fb1-af0c-00c59f14fc39",
+          "input": false,
+          "inputPort": false,
+          "name": "outline_file",
+          "output": true,
+          "outputPort": "14464819-c208-4891-a51e-09b1165b0660",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "meshfile",
+          "editable": false,
+          "id": "d5526b0c-d990-4845-b702-c8c82f750c79",
+          "input": false,
+          "inputPort": false,
+          "name": "meshfile",
+          "output": true,
+          "outputPort": "c314655f-cf3b-471c-9200-107ee3680b26",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "inskull_mask_file",
+          "editable": false,
+          "id": "e01c2bd2-8f62-4ab4-b898-68ece5e1d9ff",
+          "input": false,
+          "inputPort": false,
+          "name": "inskull_mask_file",
+          "output": true,
+          "outputPort": "c705d616-390d-464a-bf1d-76ad0613cac8",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "inskull_mesh_file",
+          "editable": false,
+          "id": "a10d47c4-6503-4940-b58c-92cde3ffb3ee",
+          "input": false,
+          "inputPort": false,
+          "name": "inskull_mesh_file",
+          "output": true,
+          "outputPort": "5637b5fe-a8f9-4a5a-9aef-27d96a2f5e6f",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "outskull_mask_file",
+          "editable": false,
+          "id": "28fde11b-ad73-4a74-b55a-ad0ff4098290",
+          "input": false,
+          "inputPort": false,
+          "name": "outskull_mask_file",
+          "output": true,
+          "outputPort": "85de57e2-18d8-4cc3-90b1-5130ad7270b7",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "outskull_mesh_file",
+          "editable": false,
+          "id": "e596c902-50e3-4c45-a130-2512f8a12e58",
+          "input": false,
+          "inputPort": false,
+          "name": "outskull_mesh_file",
+          "output": true,
+          "outputPort": "d2038f85-9084-4b72-a53a-9e106529a0a0",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "outskin_mask_file",
+          "editable": false,
+          "id": "856317f7-1a21-4ffa-b91b-75793b6cc2b4",
+          "input": false,
+          "inputPort": false,
+          "name": "outskin_mask_file",
+          "output": true,
+          "outputPort": "68947829-8bf3-44ac-924d-623225ca6bd3",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "outskin_mesh_file",
+          "editable": false,
+          "id": "8c3a1cbb-d0c9-4ccc-8d56-a2c902965a78",
+          "input": false,
+          "inputPort": false,
+          "name": "outskin_mesh_file",
+          "output": true,
+          "outputPort": "49964bf5-7081-4a9f-94d0-a2e49549755f",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "skull_mask_file",
+          "editable": false,
+          "id": "7e4443a2-1db8-4f9e-906b-6f2d7e0f2a09",
+          "input": false,
+          "inputPort": false,
+          "name": "skull_mask_file",
+          "output": true,
+          "outputPort": "396cf0db-104a-4e8b-955d-9388e0696013",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        -490.5688706600476,
+        -212.4113842647079
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Wraps the executable command ``bet``.",
+          "argument": {
+            "name": "fsl.BET()",
+            "import": "import nipype.interfaces.fsl as fsl"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "name": "fsl"
+          }
+        }
+      ],
+      "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.fsl/preprocess.html#bet"
     }
   ],
   "version": "v1"
