@@ -18,7 +18,7 @@ io_DataGrabber.inputs.field_template = dict(func='%d/func/%d_s1_r1.nii')
 
 #Basic interface class generates identity mappings
 utility_IdentityInterface = pe.Node(utility.IdentityInterface(fields=["subject", "session", "run_no"]), name='utility_IdentityInterface', iterfield = ['subject'])
-utility_IdentityInterface.iterables = [('subject', [50, 99])]
+utility_IdentityInterface.iterables = [('subject', [50, 01])]
 
 #Create a workflow to connect all those nodes
 analysisflow = nipype.Workflow('MyWorkflow')
