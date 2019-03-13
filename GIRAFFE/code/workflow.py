@@ -24,10 +24,16 @@ utility_IdentityInterface.iterables = [('subject', [50, 01])]
 #Wraps the executable command ``bet``.
 fsl_BET = pe.Node(interface = fsl.BET(), name='fsl_BET')
 
+#Generic datasink module to store structured outputs
+io_DataSink = pe.Node(interface = io.DataSink(), name='io_DataSink')
+io_DataSink.inputs.base_directory = '/project/3018028.06/LEX_ELLEN/giraffe-results/'
+
 #Create a workflow to connect all those nodes
 analysisflow = nipype.Workflow('MyWorkflow')
 analysisflow.connect(utility_IdentityInterface, "subject", io_DataGrabber, "subj_id")
 analysisflow.connect(io_DataGrabber, "struct", fsl_BET, "in_file")
+analysisflow.connect(fsl_BET, "out_file", io_DataSink, "brainextraction")
+analysisflow.connect(fsl_BET, "mask_file", io_DataSink, "mask")
 
 #Run the workflow
 plugin = 'MultiProc' #adjust your desired plugin here

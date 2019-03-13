@@ -7,6 +7,14 @@
     {
       "from": "c51d56a8-95b1-473d-ac67-408259b9fd93",
       "to": "63b3738a-bad9-43c3-8992-1fdc44296a90"
+    },
+    {
+      "from": "c62fa26c-b27a-4027-9121-0cd7a4d7a93b",
+      "to": "35acb680-196e-48a0-9fa4-b96ddf376a61"
+    },
+    {
+      "from": "8d633015-372f-4136-93bd-41ce25e49dbd",
+      "to": "c9d9a248-47d5-47ad-b9d5-4dd5f77a1e2b"
     }
   ],
   "nodes": [
@@ -701,6 +709,231 @@
         }
       ],
       "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.fsl/preprocess.html#bet"
+    },
+    {
+      "name": "io_DataSink",
+      "class": "io.DataSink",
+      "category": [
+        "io"
+      ],
+      "ports": [
+        {
+          "base": "base_directory",
+          "editable": true,
+          "id": "a7e78c66-3f5f-4482-98fb-f41a48f37364",
+          "input": true,
+          "inputPort": "e7b831b2-22b9-4281-a14f-ff0e754605f9",
+          "name": "base_directory",
+          "output": false,
+          "outputPort": false,
+          "value": "'/project/3018028.06/LEX_ELLEN/giraffe-results/'",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "container",
+          "editable": true,
+          "id": "b722c3f9-7fb3-427c-95a8-60b6fbe7ca45",
+          "input": true,
+          "inputPort": "2c8c8f48-2a8d-4d99-af44-d57f9813b0cb",
+          "name": "container",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "parameterization",
+          "editable": true,
+          "id": "e9f5bfad-57d0-47d5-be11-bda4c1cb9ff7",
+          "input": true,
+          "inputPort": "1bcd33f8-0e1a-431e-bc96-3dfdee2e988e",
+          "name": "parameterization",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "strip_dir",
+          "editable": true,
+          "id": "99b56c9f-1899-4fb9-a3f8-ffec285fffba",
+          "input": true,
+          "inputPort": "c00a9020-aac9-4792-9bb3-024f0f4777e3",
+          "name": "strip_dir",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "substitutions",
+          "editable": true,
+          "id": "32463ded-603e-4915-9986-f439c58ef9a6",
+          "input": true,
+          "inputPort": "0854a823-e138-4a70-85ea-357add82b54f",
+          "name": "substitutions",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "regexp_substitutions",
+          "editable": true,
+          "id": "c7a53ef8-c219-4a6d-87ca-976274fa5a57",
+          "input": true,
+          "inputPort": "893fbd49-95e0-4b90-b932-fabcd6d9c859",
+          "name": "regexp_substitutions",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "_outputs",
+          "editable": true,
+          "id": "e4ba437b-be10-480f-8b90-e639f18daf3d",
+          "input": true,
+          "inputPort": "629186b6-84b0-4858-bf6c-14a915685279",
+          "name": "_outputs",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "remove_dest_dir",
+          "editable": true,
+          "id": "7bc23847-1f65-4fa4-9b1f-e6a219cf58c4",
+          "input": true,
+          "inputPort": "97346cb4-8119-48ad-970f-92228173cb55",
+          "name": "remove_dest_dir",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "creds_path",
+          "editable": true,
+          "id": "3dde9208-3655-4adb-b4f7-343e6bd168bb",
+          "input": true,
+          "inputPort": "69003adf-bebd-48e6-9c38-cfdfe055e5a3",
+          "name": "creds_path",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "encrypt_bucket_keys",
+          "editable": true,
+          "id": "6762fe60-46c1-4fd8-b002-42b82e27a32e",
+          "input": true,
+          "inputPort": "73e363ef-091f-4fa0-ac96-a40b7a697110",
+          "name": "encrypt_bucket_keys",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "bucket",
+          "editable": true,
+          "id": "35c33773-a8e7-443e-8799-3741c7b64607",
+          "input": true,
+          "inputPort": "98bb3eb3-78fd-4aa6-8e37-166fa67c29d2",
+          "name": "bucket",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "local_copy",
+          "editable": true,
+          "id": "e2ec17ba-b0d1-4e63-82ec-881e5f5af2e7",
+          "input": true,
+          "inputPort": "9ef98066-c724-4304-be81-d257fb0d93be",
+          "name": "local_copy",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": false,
+          "iterator": false
+        },
+        {
+          "base": "out_file",
+          "editable": false,
+          "id": "7d4d512f-fa2d-4e4f-bba4-38cbc1a6c40f",
+          "input": false,
+          "inputPort": false,
+          "name": "out_file",
+          "output": true,
+          "outputPort": "7ab833c9-3d27-4c9a-bf50-7404a2df673c",
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "brainextraction",
+          "editable": true,
+          "id": "3909478d-b65e-44fa-9896-cbd56608d72b",
+          "input": true,
+          "inputPort": "35acb680-196e-48a0-9fa4-b96ddf376a61",
+          "name": "brainextraction",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        },
+        {
+          "base": "mask",
+          "editable": true,
+          "id": "4fa02cd3-aeec-4c41-bc87-e64119d6895a",
+          "input": true,
+          "inputPort": "c9d9a248-47d5-47ad-b9d5-4dd5f77a1e2b",
+          "name": "mask",
+          "output": false,
+          "outputPort": false,
+          "value": "",
+          "visible": true,
+          "iterator": false
+        }
+      ],
+      "position": [
+        -75.19879660413541,
+        -208.16949734605953
+      ],
+      "code": [
+        {
+          "language": "Nipype",
+          "comment": "Generic datasink module to store structured outputs",
+          "argument": {
+            "name": "io.DataSink()",
+            "import": "import nipype.interfaces.io as io"
+          }
+        },
+        {
+          "language": "Docker",
+          "argument": {
+            "name": "io"
+          }
+        }
+      ],
+      "web_url": "https://nipype.readthedocs.io/en/latest/interfaces/generated/nipype.interfaces.io.html#datasink"
     }
   ],
   "version": "v1"
